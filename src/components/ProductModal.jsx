@@ -46,7 +46,7 @@ export default function ProductModal({ product, onClose }) {
             onClick={(e) => e.stopPropagation()}
           >
             <button className="modal__close" onClick={onClose}>
-              <X size={20} />
+              <X size={18} />
             </button>
 
             <div className="modal__layout">

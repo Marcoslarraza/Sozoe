@@ -451,14 +451,17 @@
 ========================================== */
 .modal-backdrop {
   position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
   padding: 20px;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
+  overflow-y: auto;
 }
 
 .modal {
@@ -605,15 +608,47 @@
 }
 
 @media (max-width: 768px) {
+  .modal-backdrop {
+    padding: 16px;
+  }
+  .modal {
+    border-radius: 20px;
+    width: calc(100% - 32px);
+  }
   .modal__layout {
     grid-template-columns: 1fr;
   }
   .modal__image-section {
-    border-radius: 24px 24px 0 0;
-    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    padding: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+  .modal__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
   }
   .modal__info {
-    padding: 24px;
+    padding: 20px;
+    gap: 14px;
+  }
+  .modal__title {
+    font-size: 22px;
+  }
+  .modal__description {
+    font-size: 13px;
+  }
+  .modal__close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    border-radius: 50%;
   }
 }
 
@@ -960,5 +995,48 @@
 @media (max-width: 480px) {
   .footer__inner {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   MOBILE PRODUCTS
+========================================== */
+@media (max-width: 768px) {
+  .products {
+    padding: 60px 0;
+  }
+  .products__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .product-card {
+    border-radius: 14px;
+  }
+  .product-card__image-wrapper {
+    height: 130px;
+  }
+  .product-card__content {
+    padding: 10px 12px 14px;
+  }
+  .product-card__name {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .product-card__subtitle {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .product-card__tags {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+  .product-card__tag {
+    padding: 2px 7px;
+    font-size: 10px;
+  }
+  .product-card__btn {
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 }

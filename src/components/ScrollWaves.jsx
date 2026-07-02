@@ -1,32 +1,58 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ScrollWaves() {
   const svgRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const animRef = useRef(null);
 
   useEffect(() => {
-    let ticking = false;
-
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          const scroll = window.scrollY;
-          if (svgRef.current) {
-            const paths = svgRef.current.querySelectorAll('.wave-path');
-            paths.forEach((path, i) => {
-              const speed = 0.1 + i * 0.06;
-              const direction = i % 2 === 0 ? 1 : -1;
-              path.style.transform = `translateX(${scroll * speed * direction}px)`;
-            });
-          }
-          ticking = false;
-        });
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      let time = 0;
+      function animate() {
+        if (svgRef.current) {
+          const paths = svgRef.current.querySelectorAll('.wave-path');
+          paths.forEach((path, i) => {
+            const speed = 15 + i * 8;
+            const direction = i % 2 === 0 ? 1 : -1;
+            const x = Math.sin(time * 0.001 * (i + 1) * 0.5) * speed * direction;
+            path.style.transform = `translateX(${x}px)`;
+          });
+        }
+        time += 16;
+        animRef.current = requestAnimationFrame(animate);
+      }
+      animate();
+      return () => cancelAnimationFrame(animRef.current);
+    } else {
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(() => {
+            const scroll = window.scrollY;
+            if (svgRef.current) {
+              const paths = svgRef.current.querySelectorAll('.wave-path');
+              paths.forEach((path, i) => {
+                const speed = 0.1 + i * 0.06;
+                const direction = i % 2 === 0 ? 1 : -1;
+                path.style.transform = `translateX(${scroll * speed * direction}px)`;
+              });
+            }
+            ticking = false;
+          });
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return () => window.removeEventListener('scroll', onScroll);
+    }
+  }, [isMobile]);
 
   return (
     <div className="scroll-waves">
@@ -72,28 +98,24 @@ export default function ScrollWaves() {
           fill="url(#g1)"
           opacity="0.18"
         />
-
         <path
           className="wave-path"
           d="M-100 740 C 150 660, 350 630, 600 680 C 850 730, 1000 650, 1200 690 C 1400 730, 1550 640, 1700 680 L 1700 950 L -100 950 Z"
           fill="url(#g5)"
           opacity="0.15"
         />
-
         <path
           className="wave-path"
           d="M-300 700 C 0 630, 200 600, 450 650 C 700 700, 850 630, 1050 660 C 1250 690, 1450 610, 1650 650 L 1650 950 L -300 950 Z"
           fill="url(#g3)"
           opacity="0.14"
         />
-
         <path
           className="wave-path"
           d="M-150 750 C 100 680, 350 660, 600 700 C 850 740, 1050 670, 1250 700 C 1450 730, 1600 660, 1750 690 L 1750 950 L -150 950 Z"
           fill="url(#g2)"
           opacity="0.12"
         />
-
         <path
           className="wave-path"
           d="M-250 730 C 50 670, 250 640, 500 670 C 750 700, 950 640, 1150 670 C 1350 700, 1500 630, 1700 660 L 1700 950 L -250 950 Z"
