@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+
 export default function ScrollWaves() {
   const svgRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -13,24 +14,7 @@ export default function ScrollWaves() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) {
-      let time = 0;
-      function animate() {
-        if (svgRef.current) {
-          const paths = svgRef.current.querySelectorAll('.wave-path');
-          paths.forEach((path, i) => {
-            const speed = 15 + i * 8;
-            const direction = i % 2 === 0 ? 1 : -1;
-            const x = Math.sin(time * 0.001 * (i + 1) * 0.5) * speed * direction;
-            path.style.transform = `translateX(${x}px)`;
-          });
-        }
-        time += 16;
-        animRef.current = requestAnimationFrame(animate);
-      }
-      animate();
-      return () => cancelAnimationFrame(animRef.current);
-    } else {
+    if (!isMobile) {
       let ticking = false;
       function onScroll() {
         if (!ticking) {

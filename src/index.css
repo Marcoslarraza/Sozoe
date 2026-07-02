@@ -91,5 +91,33 @@ img {
 
 .wave-path {
   will-change: transform;
-  transition: transform 0.05s linear;
+}
+
+@media (max-width: 768px) {
+  .wave-path {
+    animation: wave-float 8s ease-in-out infinite alternate;
+  }
+  .wave-path:nth-child(2) {
+    animation-duration: 10s;
+    animation-delay: -2s;
+  }
+  .wave-path:nth-child(3) {
+    animation-duration: 12s;
+    animation-delay: -4s;
+  }
+  .wave-path:nth-child(4) {
+    animation-duration: 9s;
+    animation-delay: -1s;
+    animation-direction: alternate-reverse;
+  }
+  .wave-path:nth-child(5) {
+    animation-duration: 11s;
+    animation-delay: -3s;
+    animation-direction: alternate-reverse;
+  }
+}
+
+@keyframes wave-float {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
 }
