@@ -7,7 +7,7 @@ export const products = [
     sizes: ["500g", "300g"],
     shelfLife: "60 días",
     certifications: ["Orgánico", "Kosher Parve"],
-    image: "/images/tofu.svg",
+    image: "/images/tofu.png",
     color: "#dcfce7",
     features: ["Sin conservantes", "Orgánico certificado", "Extra firme", "Apto kosher"]
   },
@@ -19,7 +19,7 @@ export const products = [
     sizes: ["170g", "1Kg"],
     shelfLife: "30 días heladera / 12 meses freezer",
     certifications: ["Kosher Parve"],
-    image: "/images/veganteca.svg",
+    image: "/images/veganteca.png",
     color: "#fef9c3",
     features: ["Base coco y cajú", "Para untar y cocinar", "Apta repostería", "Apto kosher"]
   },
@@ -31,7 +31,7 @@ export const products = [
     sizes: ["170g"],
     shelfLife: "30 días",
     certifications: ["Kosher Parve"],
-    image: "/images/vegurt-natural.svg",
+    image: "/images/vegurt-natural.png",
     color: "#e0f2fe",
     features: ["Sin azúcar", "Con stevia", "Sin conservantes", "Cultivos activos"]
   },
@@ -43,7 +43,7 @@ export const products = [
     sizes: ["170g"],
     shelfLife: "30 días",
     certifications: ["Kosher Parve"],
-    image: "/images/vegurt-frutilla.svg",
+    image: "/images/vegurt-frutilla.png",
     color: "#fce4ec",
     features: ["Con frutilla", "Sin azúcar", "Sin conservantes", "Cultivos activos"]
   },
@@ -55,7 +55,7 @@ export const products = [
     sizes: ["170g"],
     shelfLife: "30 días",
     certifications: ["Kosher Parve"],
-    image: "/images/vegurt-frutos-rojos.svg",
+    image: "/images/vegurt-frutos-rojos.png",
     color: "#f3e8ff",
     features: ["Con frutos rojos", "Sin azúcar", "Sin conservantes", "Cultivos activos"]
   }

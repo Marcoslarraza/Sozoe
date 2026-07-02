@@ -17,10 +17,7 @@ export default function ProductCard({ product, index, onClick }) {
       whileHover={{ y: -8, scale: 1.02 }}
       onClick={() => onClick(product)}
     >
-      <div
-        className="product-card__image-wrapper"
-        style={{ background: `linear-gradient(135deg, ${product.color}, #ffffff)` }}
-      >
+      <div className="product-card__image-wrapper">
         <img src={product.image} alt={product.name} className="product-card__image" />
       </div>
       <div className="product-card__content">

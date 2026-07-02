@@ -50,10 +50,7 @@ export default function ProductModal({ product, onClose }) {
             </button>
 
             <div className="modal__layout">
-              <div
-                className="modal__image-section"
-                style={{ background: `linear-gradient(135deg, ${product.color}, #ffffff)` }}
-              >
+              <div className="modal__image-section">
                 <motion.img
                   src={product.image}
                   alt={product.name}

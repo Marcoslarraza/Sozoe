@@ -1,4 +1,17 @@
 /* ==========================================
+   MAIN CONTENT Z-INDEX
+========================================== */
+.hero,
+.products,
+.about,
+.certifications,
+.contact,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
    NAVBAR
 ========================================== */
 .navbar {
@@ -360,11 +373,11 @@
 }
 
 .product-card__image-wrapper {
-  height: 220px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -372,7 +385,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
   transition: transform 0.4s ease;
 }
 
@@ -489,15 +501,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 0;
   border-radius: 24px 0 0 24px;
+  overflow: hidden;
 }
 
 .modal__image {
   width: 100%;
-  max-height: 320px;
-  object-fit: contain;
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .modal__info {

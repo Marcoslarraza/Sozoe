@@ -37,6 +37,8 @@ body {
   color: var(--gray-800);
   overflow-x: hidden;
   line-height: 1.6;
+  position: relative;
+  z-index: 0;
 }
 
 html {
@@ -69,4 +71,25 @@ img {
   .container {
     padding: 0 16px;
   }
+}
+
+.scroll-waves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.scroll-waves__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.wave-path {
+  will-change: transform;
+  transition: transform 0.05s linear;
 }
