@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff"/>
+      <stop offset="100%" style="stop-color:#f3e8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg5)"/>
+  <!-- table -->
+  <ellipse cx="200" cy="260" rx="160" ry="20" fill="#d4a574" opacity="0.15"/>
+  <!-- yogurt cup -->
+  <path d="M 145 130 L 140 240 Q 140 255 200 255 Q 260 255 260 240 L 255 130 Z" fill="#ffffff" stroke="#c084fc" stroke-width="2"/>
+  <!-- fruit layer -->
+  <ellipse cx="200" cy="225" rx="50" ry="12" fill="#7c3aed" opacity="0.3"/>
+  <!-- yogurt -->
+  <ellipse cx="200" cy="180" rx="52" ry="30" fill="#fefce8"/>
+  <!-- lid band -->
+  <rect x="142" y="118" width="116" height="18" rx="3" fill="#a855f7" opacity="0.5"/>
+  <!-- blueberries -->
+  <circle cx="85" cy="180" r="6" fill="#4338ca"/>
+  <circle cx="95" cy="175" r="5" fill="#3730a3"/>
+  <circle cx="78" cy="188" r="5.5" fill="#4f46e5"/>
+  <circle cx="90" cy="190" r="4" fill="#6366f1"/>
+  <!-- raspberries -->
+  <circle cx="310" cy="175" r="8" fill="#dc2626"/>
+  <circle cx="307" cy="172" r="2" fill="#ef4444"/>
+  <circle cx="313" cy="172" r="2" fill="#ef4444"/>
+  <circle cx="310" cy="178" r="2" fill="#ef4444"/>
+  <circle cx="305" cy="176" r="2" fill="#ef4444"/>
+  <circle cx="315" cy="176" r="2" fill="#ef4444"/>
+  <!-- blackberries -->
+  <circle cx="320" cy="210" r="7" fill="#1e1b4b"/>
+  <circle cx="317" cy="207" r="2" fill="#312e81"/>
+  <circle cx="323" cy="207" r="2" fill="#312e81"/>
+  <circle cx="320" cy="213" r="2" fill="#312e81"/>
+  <!-- more berries scattered -->
+  <circle cx="100" cy="220" r="5" fill="#dc2626" opacity="0.8"/>
+  <circle cx="108" cy="225" r="4" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="295" cy="230" r="4.5" fill="#4338ca" opacity="0.6"/>
+  <!-- leaves -->
+  <path d="M 80 168 Q 85 162 90 168 Q 85 165 80 168" fill="#22c55e"/>
+  <path d="M 305 165 Q 310 159 315 165 Q 310 162 305 165" fill="#16a34a"/>
+  <!-- label -->
+  <text x="200" y="45" text-anchor="middle" font-family="serif" font-size="20" fill="#6b21a8" font-weight="bold">Vegurt Frutos Rojos</text>
+  <text x="200" y="70" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#4b5563">Yogurt vegetal · Frutos del bosque</text>
+</svg>
